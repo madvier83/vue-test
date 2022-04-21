@@ -19,23 +19,34 @@
     <title>Vue JS</title>
 </head>
 <body>
-    <header>
-        <ul>
+    <div class="app">
+
+        <header>
+            <ul>
             <li><a href="">Home</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Dev</a></li>
         </ul>
-    </header>
+        </header>
 
-    <div class="container">
-        <h1>Learning vue js</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae quis ullam reprehenderit debitis est enim pariatur sapiente incidunt iure, ipsum deserunt temporibus facere iste itaque nostrum ad eum doloremque!</p>
+        <div class="container">
+            <h1>Learning Vue.js</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae quis ullam reprehenderit debitis est enim pariatur sapiente incidunt iure, ipsum deserunt temporibus facere iste itaque nostrum ad eum doloremque!</p>
+        </div>
+            
+        <footer>
+            <p style="text-align: center;">copyright &copy; 2022</p>
+        </footer>
+    
     </div>
-        
-    <footer>
-        <p style="text-align: center;">copyright &copy; 2022</p>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const Vue = new Vue({
+            el:'#app',
+            data:{
+                message: 'hello world'
+            }
+        });
+    </script>
 </body>
 </html>
