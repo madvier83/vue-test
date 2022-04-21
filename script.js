@@ -6,11 +6,12 @@ const vm = new Vue({
         img: '01.png',
         menu: 'test1',
         qty: 1,
-        bil: 3
+        bil: 3,
+        materi: ['Vue.js']
     },
     methods:{
         getName: function(){
-            return "Hello, Saya " + this.name;
+            return "Hello, my name is " + this.name;
         },
         changeName: function(newName){
             this.name = newName;

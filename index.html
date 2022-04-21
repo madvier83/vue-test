@@ -22,14 +22,16 @@
 
         <div class="container" style="text-align: justify; max-width: 800px;">
             <img :src="img" :alt="img" width="70px" class="rounded-circle">
-            <h1>Learning Vue.js</h1>
-            <p>{{ getName() }}</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nihil amet. Placeat sed nam ex atque in iusto ipsa, eveniet minus voluptas optio quasi dolorem voluptates dignissimos itaque quidem vitae neque nemo obcaecati eius similique. Officiis vitae, sit libero corrupti beatae aspernatur eum velit perferendis blanditiis. Consequatur veritatis ipsam sit commodi! Voluptas alias laboriosam eum velit, impedit incidunt obcaecati nemo in autem nesciunt quidem fugiat aperiam ad recusandae mollitia odit ipsa iste commodi, quasi maxime minus deserunt quae. Dicta nam molestias quae sint corrupti explicabo ullam officia voluptatibus quis pariatur.</p> 
-            
-            <p>Deserunt eveniet facere nulla commodi quisquam veritatis maxime dolorem sit eos a alias sunt, reprehenderit ducimus ipsa earum cupiditate at itaque quas est vitae nesciunt atque? Maxime molestias, dolores optio a totam aspernatur. Ullam esse excepturi quibusdam quos minus soluta sed perferendis, voluptatum eius quis temporibus, facilis sapiente in magni possimus omnis modi.</p>
-                
-            <p>Neque earum voluptatum itaque ad, minima ipsam sit, veritatis beatae esse dolores voluptate culpa, dolorum minus in vel vero? Dolore nulla debitis animi exercitationem molestiae doloremque aspernatur officiis dolor quo magni eius odio odit praesentium aliquid corporis qui dicta, accusamus soluta ad architecto ab voluptates autem placeat. Nobis, esse iste! Cum nemo perspiciatis molestiae aliquid magnam modi?</p>
+            <h1>Learning {{ materi }}</h1>
+            <h3>{{ getName() }}</h3>
 
+            <p>Name : <input type="text" v-model="name"></p>
+            <p>Im learning : 
+                <label><input type="checkbox" value="Vue.js" v-model="materi">Vue.js</label>
+                <label><input type="checkbox" value="React" v-model="materi">React</label>
+                <label><input type="checkbox" value="Angular" v-model="materi">Angular</label>
+            </p> 
+            
             <p>copyright &copy; 2022</p>
         </div>
     
