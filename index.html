@@ -4,24 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-        }
-        li {
-            display: inline-block;
-        }
-        nav {
-            margin-top: 40px;
-        }
-        .container
-        {
-            padding: 20px 40px;
-        }
-        .rounded-circle{
-            border-radius: 50%;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="./style.css">
     <title>Vue JS</title>
 </head>
 <body>
@@ -29,11 +13,13 @@
 
         <nav>
             <ul>
-                <li><a href="">Testing</a></li>
+                <li><a :class="{active:menu==='test1'}" v-on:click="menu='test1'" href="#">Test1</a></li>
+                <li><a :class="{active:menu==='test2'}" v-on:click="menu='test2'" href="#">Test2</a></li>
+                <li><a :class="{active:menu==='test3'}" v-on:click="menu='test3'" href="#">Test3</a></li>
                 <li><a target="blank" href="https://github.com/madvier83/learn-vue">GitHub</a></li>
             </ul>
         </nav>
-        
+
         <div class="container" style="text-align: justify; max-width: 800px;">
             <img :src="img" :alt="img" width="70px" class="rounded-circle">
             <h1>Learning Vue.js</h1>
@@ -49,33 +35,6 @@
     
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script>
-        const vm = new Vue({
-            el:'#app',
-            data:{
-                name: 'Muhammad Advie Rifaldy',
-                message: 'hello world',
-                img: '01.png',
-                qty: 1,
-                bil: 3
-            },
-            methods:{
-                getName: function(){
-                    return "Hello, Saya " + this.name;
-                },
-                changeName: function(newName){
-                    this.name = newName;
-                }
-            },
-            computed: {
-                total: function(){
-                    return this.qty * 10000;
-                },
-                ganjilGenap: function(){
-                    return this.bil%2 == 0 ? 'ganjil':'genap';
-                }
-            }
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
