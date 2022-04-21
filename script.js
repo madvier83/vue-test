@@ -7,6 +7,8 @@ const vm = new Vue({
         menu: 'test1',
         qty: 1,
         bil: 3,
+        testArray: ['test1', 'test2', 'test3'],
+        numbers: [1,2,3,4,5],
         materi: ['Vue.js']
     },
     methods:{
@@ -15,6 +17,11 @@ const vm = new Vue({
         },
         changeName: function(newName){
             this.name = newName;
+        },
+        checkGenap: function(numbers){
+            return numbers.filter(data => {
+                return data % 2 == 0;
+            })
         }
     },
     computed: {
