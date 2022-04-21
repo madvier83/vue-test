@@ -48,24 +48,37 @@
 
             <hr>
             
-            <template v-if="Math.random() > 0.5">
-                <h5 >Now you see me ʕ•ᴥ•ʔ</h5>
-                <h5 v-else>Now you don't . . . ye</h5>
+            <script>
+                vm.bear = Math.random();
+            </script>
+            <template v-if="bear>0.9">
+                <h5 >The bear has appeared ʕ•ᴥ•ʔ  <button @click="greet(name)">Say hello</button><button @click="bear=0">Run</button></h5>
             </template>
+            <h5 v-else>So empty . . . <button v-on:click="bear=Math.random()">Walk...</button></h5>
+            <small v-bind:style="{ color: dangerLevel(bear) }">{{ bear }}</small><br><br>
 
+            <hr>
+
+            <br>
+            <p>Looping . . boring</p>
+            <ul>
+                <li v-for="x in 3">{{ x }}</li>
+            </ul>
+            
+            <p>Looping array w index {{ testArray }}</p>
             <ul>
                 <li v-for="(item, i) of testArray">{{ i+1 }}. {{ item }}</li>
             </ul>
 
-            <p>Perulangan</p>
-            <ul>
-                <li v-for="x in 5">{{ x }}</li>
-            </ul>
-            <p>Perulangan array {{ numbers }}</p>
+            <p>Looping array w filter {{ numbers }}</p>
             <ul>
                 <li v-for="x in checkGenap(numbers)">{{ x }}</li>
             </ul>
-
+            
+            <p>Looping object</p>
+            <ul>
+                <li v-for="(value,i) in book">{{ i }} : {{ value }}</li>
+            </ul>
             <p>copyright &copy; 2022</p>
         </div>
     
