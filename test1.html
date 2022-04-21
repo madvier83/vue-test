@@ -11,9 +11,15 @@
         li {
             display: inline-block;
         }
+        nav {
+            margin-top: 40px;
+        }
         .container
         {
             padding: 20px 40px;
+        }
+        .rounded-circle{
+            border-radius: 50%;
         }
     </style>
     <title>Vue JS</title>
@@ -21,22 +27,25 @@
 <body>
     <div id="app">
 
-        <header>
+        <nav>
             <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Dev</a></li>
-        </ul>
-        </header>
-
-        <div class="container">
+                <li><a href="">Testing</a></li>
+                <li><a target="blank" href="https://github.com/madvier83/learn-vue">GitHub</a></li>
+            </ul>
+        </nav>
+        
+        <div class="container" style="text-align: justify; max-width: 800px;">
+            <img :src="img" :alt="img" width="70px" class="rounded-circle">
             <h1>Learning Vue.js</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae quis ullam reprehenderit debitis est enim pariatur sapiente incidunt iure, ipsum deserunt temporibus facere iste itaque nostrum ad eum doloremque!</p>
-        </div>
+            <p>{{ getName() }}</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nihil amet. Placeat sed nam ex atque in iusto ipsa, eveniet minus voluptas optio quasi dolorem voluptates dignissimos itaque quidem vitae neque nemo obcaecati eius similique. Officiis vitae, sit libero corrupti beatae aspernatur eum velit perferendis blanditiis. Consequatur veritatis ipsam sit commodi! Voluptas alias laboriosam eum velit, impedit incidunt obcaecati nemo in autem nesciunt quidem fugiat aperiam ad recusandae mollitia odit ipsa iste commodi, quasi maxime minus deserunt quae. Dicta nam molestias quae sint corrupti explicabo ullam officia voluptatibus quis pariatur.</p> 
             
-        <footer>
-            <p style="text-align: center;">copyright &copy; 2022</p>
-        </footer>
+            <p>Deserunt eveniet facere nulla commodi quisquam veritatis maxime dolorem sit eos a alias sunt, reprehenderit ducimus ipsa earum cupiditate at itaque quas est vitae nesciunt atque? Maxime molestias, dolores optio a totam aspernatur. Ullam esse excepturi quibusdam quos minus soluta sed perferendis, voluptatum eius quis temporibus, facilis sapiente in magni possimus omnis modi.</p>
+                
+            <p>Neque earum voluptatum itaque ad, minima ipsam sit, veritatis beatae esse dolores voluptate culpa, dolorum minus in vel vero? Dolore nulla debitis animi exercitationem molestiae doloremque aspernatur officiis dolor quo magni eius odio odit praesentium aliquid corporis qui dicta, accusamus soluta ad architecto ab voluptates autem placeat. Nobis, esse iste! Cum nemo perspiciatis molestiae aliquid magnam modi?</p>
+
+            <p>copyright &copy; 2022</p>
+        </div>
     
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -44,7 +53,27 @@
         const vm = new Vue({
             el:'#app',
             data:{
-                message: 'hello world'
+                name: 'Muhammad Advie Rifaldy',
+                message: 'hello world',
+                img: '01.png',
+                qty: 1,
+                bil: 3
+            },
+            methods:{
+                getName: function(){
+                    return "Hello, Saya " + this.name;
+                },
+                changeName: function(newName){
+                    this.name = newName;
+                }
+            },
+            computed: {
+                total: function(){
+                    return this.qty * 10000;
+                },
+                ganjilGenap: function(){
+                    return this.bil%2 == 0 ? 'ganjil':'genap';
+                }
             }
         });
     </script>
